@@ -5,7 +5,7 @@ Authors@R: person("Lars", "Nielsen", email = "lars.borty@gmail.com", role = c("a
 Description: Calculates QALY from EuroQol questionaires based 
     on country specific datasets, this includes: 
     Denmark, France, Germany, Japan, Netherlands, Spain, Thailand, UK, US, Zimbabwe
-Depends: R (>= 3.4.4)
+Depends: R (>= 3.4.4) plyr
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
