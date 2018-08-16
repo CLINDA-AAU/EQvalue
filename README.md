@@ -19,19 +19,45 @@ devtools::install_github("HaemAalborg/EQvalue")
 Usage
 -----
 
-The function is called `QALY` and takes as arguments a dataframe, a country and a name of the colum with the parsed scores eg. 11111.
+EQ-5D-5L data looks something like this
+
+``` r
+NAME     <- c("Hansen","Jensen","Olesen")
+
+MOBILITY <- c(1,2,2)
+SELFCARE <- c(1,3,5)
+ACTIVITY <- c(1,2,4)
+PAIN     <- c(1,3,3)
+ANXIETY  <- c(1,2,1)
+
+df_0 <- data.frame(NAME, MOBILITY, SELFCARE, ACTIVITY, PAIN, ANXIETY)
+df_0
+#>     NAME MOBILITY SELFCARE ACTIVITY PAIN ANXIETY
+#> 1 Hansen        1        1        1    1       1
+#> 2 Jensen        2        3        2    3       2
+#> 3 Olesen        2        5        4    3       1
+```
+
+The function `EQpaste` gathers the answers into one column if they corronspond to the naming scheeme proposed in the user guide, which is: MOBILITY, SELFCARE, ACTIVITY, PAIN, ANXIETY.
 
 ``` r
 library(EQvalue)
-library(plyr)
 
-score <- c(11111,23242,53212)
-name <- c("Hansen","Jensen","Olesen")
-df <- data.frame(score,name)
+df_1 <- EQpaste(df_0)
+df_1
+#>     NAME MOBILITY SELFCARE ACTIVITY PAIN ANXIETY STATE
+#> 1 Hansen        1        1        1    1       1 11111
+#> 2 Jensen        2        3        2    3       2 23232
+#> 3 Olesen        2        5        4    3       1 25431
+```
 
-QALY(df, country="dk", name="score")
-#>   score   name Denmark
-#> 1 11111 Hansen   1.000
-#> 2 23242 Jensen   0.492
-#> 3 53212 Olesen   0.320
+The function is called `QALY` and takes as arguments a dataframe, a country and a name of the colum with the parsed scores eg. 11111.
+
+``` r
+df_2 <- QALY(df_1, country="dk", name="STATE")
+df_2
+#>     NAME MOBILITY SELFCARE ACTIVITY PAIN ANXIETY STATE Denmark
+#> 1 Hansen        1        1        1    1       1 11111   1.000
+#> 2 Jensen        2        3        2    3       2 23232   0.625
+#> 3 Olesen        2        5        4    3       1 25431   0.509
 ```

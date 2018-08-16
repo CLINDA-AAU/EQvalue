@@ -21,7 +21,6 @@ EQvalue is an R package to calculate Quality Adjusted Life Year's (QALY) from [E
 
 
 ## Installation
-
 ```{r, eval = FALSE}
 # The easiest way to install:
 devtools::install_github("HaemAalborg/EQvalue")
@@ -29,7 +28,6 @@ devtools::install_github("HaemAalborg/EQvalue")
 
 
 ## Usage
-
 EQ-5D-5L data looks something like this
 ```{r}
 NAME     <- c("Hansen","Jensen","Olesen")
@@ -48,7 +46,6 @@ df_0
 The function `EQpaste` gathers the answers into one column if they corronspond to the naming scheeme proposed in the user guide, which is: MOBILITY, SELFCARE, ACTIVITY, PAIN, ANXIETY.
 ```{r}
 library(EQvalue)
-library(plyr)
 
 df_1 <- EQpaste(df_0)
 df_1
@@ -56,10 +53,7 @@ df_1
 
 
 The function is called `QALY` and takes as arguments a dataframe, a country and a name of the colum with the parsed scores eg. 11111.
-
-
 ```{r example}
-
 df_2 <- QALY(df_1, country="dk", name="STATE")
 df_2
 ```
