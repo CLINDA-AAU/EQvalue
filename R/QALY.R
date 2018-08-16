@@ -21,32 +21,30 @@
 
 QALY <- function(x, country="dk", name="STATE") {
   
-  library(dplyr)
-  
   load(system.file('extdata', 'EQ5D5L_values.Rdata', package = 'EQvalue'))
   colnames(EQ5D5L_values)[1] <- name
   
   
   if (country == "dk") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"Denmark")), by=name)
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"Denmark")), by=name)
   } else if (country == "fr") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"France")), by=name)
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"France")), by=name)
   } else if (country == "de") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"Germany")), by=name)
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"Germany")), by=name)
   } else if (country == "jp") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"Japan")), by=name)    
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"Japan")), by=name)    
   } else if (country == "nl") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"Netherlands")), by=name)
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"Netherlands")), by=name)
   } else if (country == "es") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"Spain")), by=name)    
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"Spain")), by=name)    
   } else if (country == "th") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"Thailand")), by=name)    
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"Thailand")), by=name)    
   } else if (country == "uk") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"UK")), by=name)    
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"UK")), by=name)    
   } else if (country == "us") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"US")), by=name)    
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"US")), by=name)    
   } else if (country == "zw") {
-    result <- join(x, subset(EQ5D5L_values, select=c(name,"Zimbabwe")), by=name)    
+    result <- plyr::join(x, subset(EQ5D5L_values, select=c(name,"Zimbabwe")), by=name)    
   } else {
     result <- "Error"
   }
