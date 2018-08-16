@@ -19,7 +19,7 @@
 
 
 
-QALY <- function(x, country, name) {
+QALY <- function(x, country="dk", name="STATE") {
   
   library(dplyr)
   
