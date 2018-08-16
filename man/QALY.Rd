@@ -4,7 +4,7 @@
 \alias{QALY}
 \title{Calculates EQ-5D-5L - Quality Adjusted Life Years}
 \usage{
-QALY(x, country, name)
+QALY(x, country = "dk", name = "STATE")
 }
 \arguments{
 \item{QALY}{Converts the questionare scores}
