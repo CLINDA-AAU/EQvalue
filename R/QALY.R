@@ -21,15 +21,11 @@
 
 QALY <- function(x, country="dk", name="STATE") {
   
-  load(system.file('extdata', 'EQ5D5L_values.Rdata', package = 'EQvalue'))
+  load(system.file('extdata', 'values.Rdata', package = 'EQvalue'))
   
-  #load(system.file('extdata', 'EQ5D5L_values_5L.Rdata', package = 'EQvalue'))
+  colnames(EQ5D5L_values_5L)[1] <- "X5L.profile"
   
-  #colnames(EQ5D5L_values_5L)[1] <- "X5L.profile"
-  
-  #values <- plyr::join(EQ5D5L_values, EQ5D5L_values_5L, by="X5L.profile")
-  
-  values <- EQ5D5L_values
+  values <- plyr::join(EQ5D5L_values, EQ5D5L_values_5L, by="X5L.profile")
   
   colnames(values)[1] <- name
   
