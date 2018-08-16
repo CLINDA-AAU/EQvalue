@@ -21,22 +21,10 @@ Usage
 
 EQ-5D-5L data looks something like this
 
-``` r
-NAME     <- c("Hansen","Jensen","Olesen")
-
-MOBILITY <- c(1,2,2)
-SELFCARE <- c(1,3,5)
-ACTIVITY <- c(1,2,4)
-PAIN     <- c(1,3,3)
-ANXIETY  <- c(1,2,1)
-
-df_0 <- data.frame(NAME, MOBILITY, SELFCARE, ACTIVITY, PAIN, ANXIETY)
-df_0
-#>     NAME MOBILITY SELFCARE ACTIVITY PAIN ANXIETY
-#> 1 Hansen        1        1        1    1       1
-#> 2 Jensen        2        3        2    3       2
-#> 3 Olesen        2        5        4    3       1
-```
+    #>     NAME MOBILITY SELFCARE ACTIVITY PAIN ANXIETY
+    #> 1 Hansen        1        1        1    1       1
+    #> 2 Jensen        2        3        2    3       2
+    #> 3 Olesen        2        5        4    3       1
 
 The function `EQpaste` gathers the answers into one column if they corronspond to the naming scheeme proposed in the user guide, which is: MOBILITY, SELFCARE, ACTIVITY, PAIN, ANXIETY.
 

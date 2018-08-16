@@ -29,7 +29,7 @@ devtools::install_github("HaemAalborg/EQvalue")
 
 ## Usage
 EQ-5D-5L data looks something like this
-```{r}
+```{r echo=FALSE}
 NAME     <- c("Hansen","Jensen","Olesen")
 
 MOBILITY <- c(1,2,2)
