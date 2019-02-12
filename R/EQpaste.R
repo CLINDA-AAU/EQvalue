@@ -13,7 +13,7 @@
 
 EQpaste <- function(x) {
 
-x$STATE <- paste(x$MOBILITY, x$SELFCARE, x$ACTIVITY, x$PAIN, x$ANXIETY, sep="")
+x$STATE <- as.numeric(paste(x$MOBILITY, x$SELFCARE, x$ACTIVITY, x$PAIN, x$ANXIETY, sep=""))
 
   return(x)
 }
