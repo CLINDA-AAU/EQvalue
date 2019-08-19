@@ -54,7 +54,7 @@ df_1
 
 The function is called `QALY` and takes as arguments a dataframe, a country and a name of the colum with the parsed scores eg. 11111.
 ```{r example}
-df_2 <- QALY(df_1, country="dk", name="STATE")
+df_2 <- QALY(df_1, country = "dk", name = "STATE")
 df_2
 ```
 

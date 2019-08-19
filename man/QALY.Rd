@@ -7,13 +7,17 @@
 QALY(x, country = "dk", name = "STATE")
 }
 \arguments{
-\item{QALY}{Converts the questionare scores}
+\item{x}{dataframe}
+
+\item{country}{country of interest}
+
+\item{name}{name of the column with "32321"}
 }
 \value{
 Quality Adjusted Life Years that ranges between 1, and slightly negative, meaning worse than dead
 }
 \description{
-This function converts scores from the EQ-5D-5L questionaire to Quality Adjusted Life Years. 
+This function converts scores from the EQ-5D-5L questionaire to Quality Adjusted Life Years.
 The function do this by using value sets of different countries:
 }
 \details{
@@ -21,9 +25,9 @@ Denmark	France	Germany	Japan	Netherlands	Spain	Thailand	UK	US	Zimbabwe
 
 To use it scores of the 5 dimensions need to be pasted together and stored in a dataframe column.
 eg. 11111 is someone with good health as indicated by answers in the 5 categories and corronsponds
-to a QALY of 1, except in Zimbabwe, while 53454 would be someone with a bad health and would corronspond 
+to a QALY of 1, except in Zimbabwe, while 53454 would be someone with a bad health and would corronspond
 to a low or negative QALY
 }
 \examples{
-QALY(df, country="dk", name="pasted")
+QALY(data.frame(STATE = 23212), country = "dk", name = "STATE")
 }
